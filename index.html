@@ -1,0 +1,1157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BISWAJIT RABHA | ELITE GATEWAY</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <style>
+        /* --- CORE CONFIGURATION & SCREENSHOT THEMING --- */
+        :root {
+            --primary-purple: #7c3aed;
+            --primary-glow: #a855f7;
+            --bg-mask: rgba(10, 10, 14, 0.65);
+            --panel-bg: rgba(17, 12, 28, 0.85);
+            --border-purple: rgba(168, 85, 247, 0.4);
+            --text-main: #f3f4f6;
+            --cyber-cyan: #00f5ff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+
+        body, html {
+            width: 100%;
+            height: 100%;
+            overflow-x: hidden;
+            background-color: #000;
+            color: var(--text-main);
+        }
+
+        /* Continuous Persistent Video Engine Source */
+        .video-bg-layer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -2;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        .video-bg-layer video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .video-dark-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            background: var(--bg-mask);
+            backdrop-filter: blur(2px);
+            pointer-events: none;
+        }
+
+        /* --- SCREENSHOT NAVIGATION BAR --- */
+        .screenshot-navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 2rem;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .brand-logo-cluster {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 900;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+            color: #fff;
+        }
+        .brand-logo-cluster span {
+            color: var(--primary-glow);
+        }
+
+        .navbar-links-center {
+            display: flex;
+            list-style: none;
+            gap: 1.2rem;
+        }
+        .navbar-links-center a {
+            color: #ccc;
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+        .navbar-links-center a:hover, .navbar-links-center a.active {
+            color: #fff;
+        }
+
+        .navbar-actions-right {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .btn-text-auth {
+            background: transparent;
+            border: none;
+            color: #ccc;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .btn-pill-signup {
+            background: var(--primary-purple);
+            color: #fff;
+            border: none;
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            cursor: pointer;
+            box-shadow: 0 0 10px var(--primary-purple);
+        }
+
+        /* --- HERO SCREENSHOT LAYOUT SECTION --- */
+        .hero-viewport-arena {
+            min-height: calc(100vh - 70px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem 1rem;
+            position: relative;
+        }
+
+        .top-sub-tagline {
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            color: #fff;
+            text-transform: uppercase;
+            opacity: 0.8;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid var(--primary-glow);
+            padding-bottom: 4px;
+        }
+
+        /* Exact Stylized Branding Text Match */
+        .screenshot-main-title {
+            font-size: 5rem;
+            font-weight: 900;
+            color: #ffffff;
+            letter-spacing: -1px;
+            text-transform: uppercase;
+            line-height: 1;
+            margin-bottom: -0.5rem;
+        }
+
+        .screenshot-giant-number {
+            font-size: 7.5rem;
+            font-weight: 900;
+            color: var(--primary-purple);
+            line-height: 0.9;
+            letter-spacing: -2px;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 0 35px rgba(124, 58, 237, 0.6);
+        }
+
+        .badge-inline-container {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .badge-node-item {
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #a78bfa;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+        .badge-node-item::before {
+            content: '●';
+            color: var(--primary-glow);
+            font-size: 0.6rem;
+        }
+
+        .hero-description-block {
+            max-width: 500px;
+            font-size: 0.85rem;
+            color: #9ca3af;
+            line-height: 1.5;
+            margin-bottom: 2rem;
+        }
+
+        /* Screenshot Accurate Action Button */
+        .btn-marketplace-primary {
+            background: var(--primary-purple);
+            color: #fff;
+            border: none;
+            padding: 1rem 2.8rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(124, 58, 237, 0.5);
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin-bottom: 2rem;
+        }
+        .btn-marketplace-primary:hover {
+            transform: scale(1.03);
+            box-shadow: 0 6px 25px rgba(124, 58, 237, 0.8);
+        }
+
+        /* Social Node Grid Anchor Tags */
+        .social-vector-grid {
+            display: flex;
+            gap: 1.2rem;
+        }
+        .social-link-icon-node {
+            color: rgba(255, 255, 255, 0.4);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: bold;
+            transition: color 0.2s, transform 0.2s;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .social-link-icon-node:hover {
+            color: #fff;
+            background: rgba(124, 58, 237, 0.2);
+            border-color: var(--primary-glow);
+            transform: translateY(-2px);
+        }
+
+        /* --- FLOATING AUDIO ENGINE CAPSULE --- */
+        .audio-capsule-widget {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            z-index: 10;
+        }
+        .audio-ctrl-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: #fff;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 0.7rem;
+        }
+        .audio-volume-bar {
+            accent-color: var(--primary-purple);
+            width: 60px;
+            cursor: pointer;
+        }
+
+        /* --- LIVE FLOATING VISITOR COUNTER WIDGET --- */
+        .floating-visitor-panel {
+            position: fixed;
+            right: 20px;
+            top: 40%;
+            transform: translateY(-50%);
+            background: rgba(10, 6, 18, 0.85);
+            border: 1px solid var(--border-purple);
+            border-radius: 10px;
+            padding: 0.8rem 1.2rem;
+            text-align: center;
+            box-shadow: 0 0 15px rgba(124, 58, 237, 0.3);
+            z-index: 10;
+            backdrop-filter: blur(10px);
+        }
+        .visitor-widget-lbl {
+            font-size: 0.65rem;
+            color: #9ca3af;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.3rem;
+        }
+        .visitor-widget-count {
+            font-size: 1.4rem;
+            font-weight: 900;
+            color: var(--cyber-cyan);
+            text-shadow: 0 0 8px var(--cyber-cyan);
+        }
+
+        /* --- GLASSMORPHISM SYSTEM MODALS MATRIX --- */
+        .system-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: 2000;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            padding: 1.5rem;
+        }
+        .system-modal-overlay.active {
+            display: flex;
+        }
+        .modal-window-frame {
+            background: var(--panel-bg);
+            border: 1px solid var(--border-purple);
+            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.8), 0 0 25px var(--border-purple);
+            border-radius: 14px;
+            width: 100%;
+            max-width: 800px;
+            max-height: 85vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            backdrop-filter: blur(25px);
+        }
+        .modal-header-deck {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .modal-header-title {
+            font-weight: 800;
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+            color: #fff;
+        }
+        .btn-modal-close {
+            background: transparent;
+            border: none;
+            color: #9ca3af;
+            font-size: 1.6rem;
+            cursor: pointer;
+        }
+        .btn-modal-close:hover { color: #fff; }
+
+        .modal-navigation-tabs {
+            display: flex;
+            background: rgba(0, 0, 0, 0.3);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .tab-nav-button {
+            flex: 1;
+            padding: 0.9rem;
+            background: transparent;
+            border: none;
+            color: #9ca3af;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            cursor: pointer;
+            letter-spacing: 0.5px;
+            border-bottom: 2px solid transparent;
+        }
+        .tab-nav-button.active {
+            color: #fff;
+            background: rgba(168, 85, 247, 0.1);
+            border-bottom-color: var(--primary-glow);
+        }
+
+        .modal-content-body {
+            padding: 1.5rem;
+            overflow-y: auto;
+            flex: 1;
+        }
+        .modal-tab-panel {
+            display: none;
+        }
+        .modal-tab-panel.active {
+            display: block;
+        }
+
+        /* --- TODAY'S DYNAMIC CLASS ROUTINE DISPLAY --- */
+        .routine-dashboard-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+        .live-date-header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(0,0,0,0.4);
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+        .live-pulse-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #22c55e;
+            font-weight: 700;
+            font-size: 0.85rem;
+        }
+        .pulse-dot {
+            width: 10px;
+            height: 10px;
+            background: #22c55e;
+            border-radius: 50%;
+            animation: pulseGlow 1.4s infinite;
+        }
+        @keyframes pulseGlow {
+            0%, 100% { opacity: 0.5; transform: scale(0.9); }
+            50% { opacity: 1; transform: scale(1.1); }
+        }
+        .btn-full-routine-link {
+            display: block;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.05);
+            color: #fff;
+            text-decoration: none;
+            padding: 0.8rem;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.8rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .btn-full-routine-link:hover {
+            border-color: var(--primary-glow);
+            background: rgba(124, 58, 237, 0.1);
+        }
+        .dynamic-timetable-focus-box {
+            background: rgba(124, 58, 237, 0.05);
+            border: 1px dashed var(--border-purple);
+            border-radius: 8px;
+            padding: 1rem;
+        }
+        .focus-box-title {
+            font-size: 0.8rem;
+            font-weight: 800;
+            color: var(--primary-glow);
+            margin-bottom: 0.8rem;
+            text-transform: uppercase;
+        }
+        .timetable-slots-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+        .slot-pill-node {
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 0.6rem 1rem;
+            border-radius: 6px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+        }
+        .slot-pill-node span.time-lbl {
+            color: var(--cyber-cyan);
+            font-weight: 700;
+        }
+
+        /* --- PROFESSIONAL CYBER EXP/ATM IDENTITY CARD --- */
+        .identity-generator-viewport {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        .premium-atx-id-card {
+            width: 100%;
+            max-width: 460px;
+            height: 270px;
+            background: linear-gradient(135deg, #120e24 0%, #07050d 100%);
+            border-radius: 16px;
+            border: 2px solid rgba(168, 85, 247, 0.6);
+            padding: 1.5rem;
+            position: relative;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.7);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow: hidden;
+        }
+        .premium-atx-id-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+            background-size: 8px 8px;
+            pointer-events: none;
+        }
+        .id-top-deck {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .id-photo-frame {
+            width: 85px;
+            height: 100px;
+            border: 2px solid var(--primary-glow);
+            border-radius: 6px;
+            background: #000;
+            overflow: hidden;
+        }
+        .id-photo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .id-gold-microchip {
+            width: 48px;
+            height: 38px;
+            background: linear-gradient(135deg, #f59e0b 0%, #b45309 100%);
+            border-radius: 6px;
+            box-shadow: inset 0 1px 2px rgba(255,255,255,0.3);
+        }
+        .id-middle-deck {
+            margin: 0.5rem 0;
+        }
+        .id-account-serial {
+            font-family: monospace;
+            font-size: 1.35rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            color: #fff;
+            text-shadow: 0 2px 4px #000;
+        }
+        .id-bottom-deck {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+        .id-data-field {
+            display: flex;
+            flex-direction: column;
+        }
+        .id-field-lbl {
+            font-size: 0.55rem;
+            color: #9ca3af;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .id-field-val {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #fff;
+        }
+        .id-field-rank {
+            font-size: 0.85rem;
+            font-weight: 900;
+            color: var(--cyber-cyan);
+            text-shadow: 0 0 5px var(--cyber-cyan);
+        }
+        .btn-export-id-card {
+            background: var(--primary-purple);
+            color: #fff;
+            border: none;
+            padding: 0.6rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.8rem;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+
+        /* --- HIGH PERFORMANCE INTERACTIVE AI BOT MAIN FRAME --- */
+        .ai-bot-chat-container {
+            display: flex;
+            flex-direction: column;
+            height: 450px;
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            overflow: hidden;
+        }
+        .ai-chat-logs {
+            flex: 1;
+            overflow-y: auto;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+        .chat-bubble-node {
+            max-width: 80%;
+            padding: 0.6rem 1rem;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            line-height: 1.4;
+        }
+        .chat-bubble-node.ai-side {
+            background: rgba(124, 58, 237, 0.15);
+            border: 1px solid var(--border-purple);
+            align-self: flex-start;
+        }
+        .chat-bubble-node.user-side {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            align-self: flex-end;
+        }
+        .ai-chat-input-bar {
+            display: flex;
+            padding: 0.8rem;
+            background: rgba(0, 0, 0, 0.5);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            gap: 0.5rem;
+        }
+        .ai-chat-text-field {
+            flex: 1;
+            background: rgba(0,0,0,0.6);
+            border: 1px solid var(--border-purple);
+            border-radius: 6px;
+            padding: 0.6rem 1rem;
+            color: #fff;
+            outline: none;
+            font-size: 0.85rem;
+        }
+        .btn-ai-chat-send {
+            background: var(--primary-purple);
+            color: #fff;
+            border: none;
+            padding: 0 1.2rem;
+            border-radius: 6px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        /* --- NEW STUDENT UTILITIES DECK ARCHITECTURE --- */
+        .student-utility-dashboard {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .utility-box-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        .utility-card-module {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 1rem;
+        }
+        .utility-card-title {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--cyber-cyan);
+            margin-bottom: 0.8rem;
+            text-transform: uppercase;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            padding-bottom: 4px;
+        }
+        .utility-input-row {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 0.8rem;
+        }
+        .utility-text-input {
+            flex: 1;
+            background: rgba(0,0,0,0.5);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 4px;
+            padding: 0.4rem 0.6rem;
+            color: #fff;
+            font-size: 0.8rem;
+            outline: none;
+        }
+        .btn-utility-action {
+            background: var(--primary-purple);
+            color: #fff;
+            border: none;
+            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 0.75rem;
+            cursor: pointer;
+        }
+        .utility-output-list {
+            max-height: 120px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+        .utility-item-node {
+            background: rgba(255,255,255,0.03);
+            padding: 0.4rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* --- PLATFORM SCREENSHOT ACCURATE FOOTER --- */
+        .screenshot-footer-node {
+            position: fixed;
+            bottom: 15px;
+            right: 20px;
+            font-size: 0.65rem;
+            color: rgba(255, 255, 255, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            pointer-events: none;
+        }
+
+        @media(max-width: 768px) {
+            .navbar-links-center, .navbar-actions-right { display: none; }
+            .screenshot-main-title { font-size: 2.8rem; }
+            .screenshot-giant-number { font-size: 4.5rem; }
+            .utility-box-row { grid-template-columns: 1fr; }
+            .floating-visitor-panel { position: static; transform: none; margin: 1rem auto; width: fit-content; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="video-bg-layer">
+        <video src="video.mp4" autoplay loop muted playsinline id="portalVideoBackground"></video>
+    </div>
+
+    <div class="video-dark-overlay"></div>
+
+    <nav class="screenshot-navbar">
+        <div class="brand-logo-cluster">
+            PRITAM <span>999</span>
+        </div>
+        <ul class="navbar-links-center">
+            <li><a class="active" onclick="modalEngine.closeAll()">Home</a></li>
+            <li><a onclick="modalEngine.open('coreDashboard', 0)">Dashboard</a></li>
+            <li><a onclick="modalEngine.open('coreDashboard', 1)">Identity Card</a></li>
+            <li><a onclick="modalEngine.open('studentUtilityDashboard')">Student Tools</a></li>
+            <li><a onclick="modalEngine.open('aiBotDashboard')">AI Chat Box</a></li>
+        </ul>
+        <div class="navbar-actions-right">
+            <button class="btn-text-auth">Sign In</button>
+            <button class="btn-pill-signup">Sign Up</button>
+        </div>
+    </nav>
+
+    <main class="hero-viewport-arena">
+        <div class="top-sub-tagline">Fast Delivery • Trusted Service • Premium Quality • 24/7 Support</div>
+        
+        <h1 class="screenshot-main-title">PRITAM</h1>
+        <div class="screenshot-giant-number">999</div>
+
+        <div class="badge-inline-container">
+            <div class="badge-node-item">Exclusive</div>
+            <div class="badge-node-item">Undetected</div>
+            <div class="badge-node-item">Elite Support</div>
+        </div>
+
+        <p class="hero-description-block">
+            The premier destination for high-end digital enhancements and gaming assets. Experience the next generation of tactical advantage with PRITAM 999.
+        </p>
+
+        <button class="btn-marketplace-primary" onclick="modalEngine.open('coreDashboard', 0)">
+            <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16" style="margin-top:-2px;"><path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5z"/></svg>
+            Enter Marketplace
+        </button>
+
+        <div class="social-vector-grid">
+            <a href="https://www.instagram.com/rabha_bisswajit" target="_blank" class="social-link-icon-node">@rabha_bisswajit</a>
+            <a href="https://www.instagram.com/biswajit_jur" target="_blank" class="social-link-icon-node">@biswajit_jur</a>
+        </div>
+    </main>
+
+    <div class="audio-capsule-widget">
+        <button class="audio-ctrl-btn" id="audioStateBtn" onclick="bgAudioEngine.toggleState()">▶</button>
+        <input type="range" class="audio-volume-bar" min="0" max="1" step="0.05" value="0.5" oninput="bgAudioEngine.adjustVolume(this.value)">
+        <audio id="bgMusicTrack" src="music.mp3" loop></audio>
+    </div>
+
+    <div class="floating-visitor-panel">
+        <div class="visitor-widget-lbl">Live Visitors</div>
+        <div class="visitor-widget-count" id="visitorLiveField">0042</div>
+    </div>
+
+    <div class="screenshot-footer-node">
+        BISWAJIT RABHA | DESIGN SYSTEM STANDARD
+    </div>
+
+    <div class="system-modal-overlay" id="coreDashboard" onclick="modalEngine.handleBackgroundOverlayClick(event)">
+        <div class="modal-window-frame">
+            <div class="modal-header-deck">
+                <div class="modal-header-title">SYSTEM CONTROL HUB</div>
+                <button class="btn-modal-close" onclick="modalEngine.close('coreDashboard')">×</button>
+            </div>
+            <div class="modal-navigation-tabs">
+                <button class="tab-nav-button active" onclick="modalEngine.switchTab(event, 'liveRoutinePanel')">Live Class Routine</button>
+                <button class="tab-nav-button" onclick="modalEngine.switchTab(event, 'identityCardPanel')">Professional ID Matrix</button>
+            </div>
+            <div class="modal-content-body">
+                
+                <div class="modal-tab-panel active" id="liveRoutinePanel">
+                    <div class="routine-dashboard-grid">
+                        <div class="live-date-header-row">
+                            <div>
+                                <span style="font-size:0.7rem; color:#9ca3af; text-transform:uppercase;">System Calibrated Node</span>
+                                <div id="calendarNodeDate" style="font-size:1.2rem; font-weight:800;">00-00-2026</div>
+                            </div>
+                            <div class="live-pulse-badge">
+                                <span class="pulse-dot"></span> Today Active
+                            </div>
+                        </div>
+                        <a href="https://hackerbhai7099517202-del.github.io/college-routine-j.n-memorial-Higher-Secondary/" target="_blank" class="btn-full-routine-link">Browse Full Class Schedule Database</a>
+                        
+                        <div class="dynamic-timetable-focus-box">
+                            <div class="focus-box-title" id="currentDayFocusTitle">TODAY'S INSTANT ROUTINE MAP</div>
+                            <div class="timetable-slots-wrapper" id="dynamicTimetableEngineOutput">
+                                </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-tab-panel" id="identityCardPanel">
+                    <div class="identity-generator-viewport">
+                        <div class="premium-atx-id-card" id="exportableCardObject">
+                            <div class="id-top-deck">
+                                <div class="id-photo-frame">
+                                    <img src="developer.jpg" alt="Admin Photo" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\' fill=\'%237c3aed\'><circle cx=\'50\' cy=\'35\' r=\'20\'/><path d=\'M10,85 C10,60 90,60 90,85 Z\'/></svg>';">
+                                </div>
+                                <div class="id-gold-microchip"></div>
+                            </div>
+                            <div class="id-middle-deck">
+                                <div class="id-account-serial">9994 8592 7099 5172</div>
+                            </div>
+                            <div class="id-bottom-deck">
+                                <div class="id-data-field">
+                                    <span class="id-field-lbl">Identity Holder</span>
+                                    <span class="id-field-val">Biswajit Rabha</span>
+                                </div>
+                                <div class="id-data-field">
+                                    <span class="id-field-lbl">Classification</span>
+                                    <span class="id-field-val">Class II (2nd Year)</span>
+                                </div>
+                                <div class="id-data-field">
+                                    <span class="id-field-lbl">Authorization</span>
+                                    <span class="id-field-rank">LEVEL-4 ADMIN</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn-export-id-card" onclick="identityCardExporter.triggerDownload()">Save ID Card Securely</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="system-modal-overlay" id="aiBotDashboard" onclick="modalEngine.handleBackgroundOverlayClick(event)">
+        <div class="modal-window-frame">
+            <div class="modal-header-deck">
+                <div class="modal-header-title">BISWA COGNITIVE AI AUTOMATON</div>
+                <button class="btn-modal-close" onclick="modalEngine.close('aiBotDashboard')">×</button>
+            </div>
+            <div class="modal-content-body">
+                <div class="ai-bot-chat-container">
+                    <div class="ai-chat-logs" id="aiChatTerminalDisplay">
+                        <div class="chat-bubble-node ai-side">
+                            Hello Admin! I am now working as an active AI Bot Module. <br><br>
+                            How can I help you today? Ask me any questions regarding code, math, formulas, or study guides!
+                        </div>
+                    </div>
+                    <div class="ai-chat-input-bar">
+                        <input type="text" class="ai-chat-text-field" id="aiInputField" placeholder="Type a smart command or query..." onkeydown="if(event.key === 'Enter') autonomousAiBot.processMessage()">
+                        <button class="btn-ai-chat-send" onclick="autonomousAiBot.processMessage()">Send</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="system-modal-overlay" id="studentUtilityDashboard" onclick="modalEngine.handleBackgroundOverlayClick(event)">
+        <div class="modal-window-frame">
+            <div class="modal-header-deck">
+                <div class="modal-header-title">STUDENT PRODUCTION SUITE</div>
+                <button class="btn-modal-close" onclick="modalEngine.close('studentUtilityDashboard')">×</button>
+            </div>
+            <div class="modal-content-body">
+                <div class="student-utility-dashboard">
+                    
+                    <div class="utility-box-row">
+                        <div class="utility-card-module">
+                            <div class="utility-card-title">Smart Notes Summarizer</div>
+                            <div class="utility-input-row">
+                                <input type="text" class="utility-text-input" id="noteInputField" placeholder="Paste heavy study paragraphs here...">
+                                <button class="btn-utility-action" onclick="studentSuiteEngine.summarizeNotes()">Parse</button>
+                            </div>
+                            <div class="utility-output-list" id="summarizerOutputFrame" style="font-size:0.75rem; color:#ccc; line-height:1.4;">
+                                Output logs empty. Input study text blocks above to generate structural analytical pointers.
+                            </div>
+                        </div>
+
+                        <div class="utility-card-module">
+                            <div class="utility-card-title">CGPA & Grade Pointer Engine</div>
+                            <div class="utility-input-row">
+                                <input type="number" class="utility-text-input" id="sgpaInputField" placeholder="Enter Semester SGPA (e.g. 8.5)" step="0.01">
+                                <button class="btn-utility-action" onclick="studentSuiteEngine.calculateCgpa()">Add</button>
+                            </div>
+                            <div class="utility-output-list" id="cgpaOutputLogs">
+                                <div class="utility-item-node"><span>Current Average Status:</span><b id="finalCgpaValue" style="color:var(--cyber-cyan);">0.00</b></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="utility-card-module">
+                        <div class="utility-card-title">Quick Assignment & Submission Tracker Matrix</div>
+                        <div class="utility-input-row">
+                            <input type="text" class="utility-text-input" id="assignmentTaskField" placeholder="Task description (e.g., Physics Lab Record)">
+                            <input type="date" class="utility-text-input" id="assignmentDateField" style="max-width:140px;">
+                            <button class="btn-utility-action" onclick="studentSuiteEngine.addAssignment()">Track</button>
+                        </div>
+                        <div class="utility-output-list" id="assignmentLogsWrapper">
+                            </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        /* Timetable Data Array Map Schema Matrix */
+        const TIMETABLE_DATA_MAP = {
+            1: [ { t: "9:15 – 10:00", s: "MASS" }, { t: "10:00 – 10:45", s: "POSC" }, { t: "10:55 – 11:40", s: "ENGL" }, { t: "11:40 – 12:35", s: "ECON / HIST" }, { t: "1:00 – 1:45", s: "EDUC" }, { t: "1:45 – 2:30", s: "ADAS" } ],
+            2: [ { t: "9:15 – 10:00", s: "POSC" }, { t: "10:00 – 10:45", s: "ENGL" }, { t: "10:55 – 11:40", s: "RT / IT / ADAS" }, { t: "11:40 – 12:35", s: "ECON / HIST" }, { t: "1:00 – 1:45", s: "EDUC" }, { t: "1:45 – 2:30", s: "MASS" } ],
+            3: [ { t: "9:15 – 10:00", s: "ENGL" }, { t: "10:00 – 10:45", s: "MASS" }, { t: "10:55 – 11:40", s: "ECON / HIST" }, { t: "11:40 – 12:35", s: "POSC" }, { t: "1:00 – 1:45", s: "EDUC" }, { t: "1:45 – 2:30", s: "ADAS" } ],
+            4: [ { t: "9:15 – 10:00", s: "ECON / HIST" }, { t: "10:00 – 10:45", s: "POSC" }, { t: "10:55 – 11:40", s: "RT / IT / ADAS" }, { t: "11:40 – 12:35", s: "MASS" }, { t: "1:00 – 1:45", s: "EDUC" }, { t: "1:45 – 2:30", s: "ENGL" } ],
+            5: [ { t: "9:15 – 10:00", s: "ENGL" }, { t: "10:00 – 10:45", s: "MASS" }, { t: "10:55 – 11:40", s: "POSC" }, { t: "11:40 – 12:35", s: "ECON / HIST" }, { t: "1:00 – 1:45", s: "EDUC" }, { t: "1:45 – 2:30", s: "HIST" }, { t: "2:30 – 3:15", s: "RT / IT" } ],
+            6: [ { t: "9:15 – 10:00", s: "POSC" }, { t: "10:00 – 10:45", s: "ENGL" }, { t: "10:55 – 11:40", s: "RT / IT / ADAS" }, { t: "11:40 – 12:35", s: "MASS" }, { t: "1:00 – 1:45", s: "EDUC" }, { t: "1:45 – 2:30", s: "HIST" } ]
+        };
+        const DAY_NAMES = ["SUNDAY", "MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY"];
+
+        /* Audio Initialization Handling Framework */
+        class PortalAudioController {
+            constructor() {
+                this.track = document.getElementById('bgMusicTrack');
+                this.btn = document.getElementById('audioStateBtn');
+                this.engaged = false;
+            }
+            lazyInit() {
+                if(this.engaged) return;
+                this.track.volume = 0.5;
+                this.engaged = true;
+            }
+            toggleState() {
+                this.lazyInit();
+                if(this.track.paused) {
+                    this.track.play().then(() => { this.btn.innerText = "||"; }).catch(() => {});
+                } else {
+                    this.track.pause(); this.btn.innerText = "▶";
+                }
+            }
+            adjustVolume(v) { this.lazyInit(); this.track.volume = v; }
+        }
+        const bgAudioEngine = new PortalAudioController();
+
+        /* Modal Visibility Architecture Module Router */
+        class StructuralModalEngine {
+            open(modalId, indexToForce = null) {
+                bgAudioEngine.lazyInit();
+                const targetModal = document.getElementById(modalId);
+                targetModal.style.display = 'flex';
+                if(indexToForce !== null && modalId === 'coreDashboard') {
+                    const buttons = targetModal.getElementsByClassName('tab-nav-button');
+                    if(buttons[indexToForce]) buttons[indexToForce].click();
+                }
+            }
+            close(modalId) { document.getElementById(modalId).style.display = 'none'; }
+            closeAll() { document.querySelectorAll('.system-modal-overlay').forEach(m => m.style.display = 'none'); }
+            handleBackgroundOverlayClick(e) { if(e.target.classList.contains('system-modal-overlay')) e.target.style.display = 'none'; }
+            switchTab(e, panelId) {
+                const parent = e.target.closest('.modal-window-frame');
+                parent.querySelectorAll('.tab-nav-button').forEach(b => b.classList.remove('active'));
+                parent.querySelectorAll('.modal-tab-panel').forEach(p => p.classList.remove('active'));
+                e.target.classList.add('active');
+                document.getElementById(panelId).classList.add('active');
+            }
+        }
+        const modalEngine = new StructuralModalEngine();
+
+        /* HTML Canvas Exporter Interface Layer */
+        class IdentityCardCanvasExporter {
+            triggerDownload() {
+                const targets = document.getElementById('exportableCardObject');
+                html2canvas(targets, { scale: 2, useCORS: true, backgroundColor: null }).then(canvas => {
+                    const anchor = document.createElement('a');
+                    anchor.download = 'BISWAJIT_RABHA_PROFESSIONAL_ID.png';
+                    anchor.href = canvas.toDataURL('image/png');
+                    anchor.click();
+                });
+            }
+        }
+        const identityCardExporter = new IdentityCardCanvasExporter();
+
+        /* Autonomous Chat AI Simulation Bot Engine */
+        class IntelligentAIBotSystem {
+            constructor() {
+                this.logBox = document.getElementById('aiChatTerminalDisplay');
+                this.inputField = document.getElementById('aiInputField');
+            }
+            processMessage() {
+                const text = this.inputField.value.trim();
+                if(!text) return;
+                this.renderBubble(text, 'user-side');
+                this.inputField.value = '';
+
+                setTimeout(() => {
+                    const response = this.computeBotLogicTree(text);
+                    this.renderBubble(response, 'ai-side');
+                }, 400);
+            }
+            renderBubble(msg, alignment) {
+                const element = document.createElement('div');
+                element.className = `chat-bubble-node ${alignment}`;
+                element.innerHTML = msg;
+                this.logBox.appendChild(element);
+                this.logBox.scrollTop = this.logBox.scrollHeight;
+            }
+            computeBotLogicTree(promptText) {
+                const query = promptText.toLowerCase();
+                if (query.includes('hello') || query.includes('hi') || query.includes('hey')) {
+                    return `🤖 <b>Biswa Bot:</b> Welcome Admin! How can I assist you with your studies or code scripts today?`;
+                }
+                if (query.includes('routine') || query.includes('class') || query.includes('timetable')) {
+                    return `🤖 <b>Biswa Bot:</b> Today's verified class schedule has been synchronized into your Core Dashboard under the "Live Class Routine" tab view.`;
+                }
+                if (query.includes('math') || query.includes('formula') || query.includes('solve')) {
+                    return `🤖 <b>Biswa Bot:</b> Advanced mathematical notation calculated successfully:<br>$$\\lim_{h \to 0} \\frac{f(x+h) - f(x)}{h} = f'(x)$$`;
+                }
+                if (query.includes('code') || query.includes('html') || query.includes('program')) {
+                    return `🤖 <b>Biswa Bot:</b> Script routine successfully compiled. Syntax parameters safe.`;
+                }
+                return `🤖 <b>Biswa Bot:</b> Your input query has been stored in memory logs. Let me know if you want me to track an assignment or generate formulas!`;
+            }
+        }
+        let autonomousAiBot;
+
+        /* Core Student Application Utility Suite Engine */
+        class StudentSuiteEngine {
+            constructor() {
+                this.storedSgpas = [];
+                this.assignmentsList = [];
+            }
+            summarizeNotes() {
+                const text = document.getElementById('noteInputField').value.trim();
+                const container = document.getElementById('summarizerOutputFrame');
+                if(!text) { container.innerText = "Please provide some textbook sentences first."; return; }
+                
+                container.innerHTML = `
+                    <b>⚡ Core AI Summary Pointers:</b><br>
+                    • Key concept extracted from block inputs.<br>
+                    • Vital exam target framework identified.<br>
+                    • Summary context processed cleanly: "<i>${text.substring(0, 60)}...</i>"
+                `;
+                document.getElementById('noteInputField').value = '';
+            }
+            calculateCgpa() {
+                const inputVal = parseFloat(document.getElementById('sgpaInputField').value);
+                if(isNaN(inputVal) || inputVal < 0 || inputVal > 10) return;
+                
+                this.storedSgpas.push(inputVal);
+                const sum = this.storedSgpas.reduce((a, b) => a + b, 0);
+                const avg = sum / this.storedSgpas.length;
+                
+                document.getElementById('finalCgpaValue').innerText = avg.toFixed(2);
+                
+                const logItem = document.createElement('div');
+                logItem.className = 'utility-item-node';
+                logItem.innerHTML = `<span>Sem ${this.storedSgpas.length} Point:</span> <b>${inputVal.toFixed(2)}</b>`;
+                document.getElementById('cgpaOutputLogs').appendChild(logItem);
+                
+                document.getElementById('sgpaInputField').value = '';
+            }
+            addAssignment() {
+                const desc = document.getElementById('assignmentTaskField').value.trim();
+                const deadline = document.getElementById('assignmentDateField').value;
+                if(!desc || !deadline) return;
+
+                const wrapper = document.getElementById('assignmentLogsWrapper');
+                const node = document.createElement('div');
+                node.className = 'utility-item-node';
+                node.innerHTML = `<span>⚡ ${desc}</span> <b style="color:var(--primary-glow);">${deadline}</b>`;
+                wrapper.appendChild(node);
+
+                document.getElementById('assignmentTaskField').value = '';
+                document.getElementById('assignmentDateField').value = '';
+            }
+        }
+        const studentSuiteEngine = new StudentSuiteEngine();
+
+        /* System Runtime Core Chronos Initialization Pipeline */
+        function initSystemClockEngine() {
+            const dateDisplay = document.getElementById('calendarNodeDate');
+            const todayObject = new Date();
+            const dateStr = String(todayObject.getDate()).padStart(2, '0');
+            const monthStr = String(todayObject.getMonth() + 1).padStart(2, '0');
+            const yearStr = todayObject.getFullYear();
+            dateDisplay.innerText = `${dateStr}-${monthStr}-${yearStr}`;
+
+            const actualDayIndex = todayObject.getDay();
+            // Fallback strategy: If Sunday (0), map to Monday (1)
+            const targetedDayIndex = (actualDayIndex === 0) ? 1 : actualDayIndex;
+            
+            document.getElementById('currentDayFocusTitle').innerText = `TODAY'S AUTOMATIC TIMETABLE MAP (${DAY_NAMES[targetedDayIndex]})`;
+            
+            const currentDayRoutineArr = TIMETABLE_DATA_MAP[targetedDayIndex] || TIMETABLE_DATA_MAP[1];
+            const outputWrapper = document.getElementById('dynamicTimetableEngineOutput');
+            
+            outputWrapper.innerHTML = currentDayRoutineArr.map(item => `
+                <div class="slot-pill-node">
+                    <span class="time-lbl">${item.t}</span>
+                    <span><b>${item.s}</b></span>
+                </div>
+            `).join('');
+
+            // Simulated Live Visitor Core Engine Ticker
+            setInterval(() => {
+                const currentCount = parseInt(document.getElementById('visitorLiveField').innerText);
+                const deltaChange = Math.random() > 0.5 ? 1 : -1;
+                const finalSum = Math.max(12, currentCount + deltaChange);
+                document.getElementById('visitorLiveField').innerText = String(finalSum).padStart(4, '0');
+            }, 3000);
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            initSystemClockEngine();
+            autonomousAiBot = new IntelligentAIBotSystem();
+        });
+    </script>
+</body>
+</html>
